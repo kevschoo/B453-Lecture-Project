@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[DisallowMultipleComponent]
-public class Team : MonoBehaviour
+public class Gun : MonoBehaviour
 {
-    [field: SerializeField] public Base BaseObj { get; set; }
-    [field: SerializeField] public int TeamID { get; set; }
-    [field: SerializeField] public int Score { get; set; }
-
     // Start is called before the first frame update
     void Start()
     {
