@@ -91,6 +91,7 @@ public class MouseControls : MonoBehaviour
                         if(FlagScript.IsActive == true) {FlagScript.IsActive = false;}
                         else {Destroy(SelectedObj);}
                         }
+                        SelectedObj = null;
                         break;
                     }
                 }
