@@ -11,10 +11,10 @@ public class Base : Entity
     [field: SerializeField] public override Base MainBase { get; set; }
 
     [field: SerializeField] public SpriteRenderer SpriteRender { get; set; }
-    [field: SerializeField] public List<GameObject> Flags { get; set; } //List of Flags
+    [field: SerializeField] public int FlagLimit { get; set; } = 2; //Max Flags
+    [field: SerializeField] public List<Flag> Flags { get; set; } //List of Flags
+    [field: SerializeField] public GameObject FlagType { get; set; } 
     [field: SerializeField] public GameObject BillionType { get; set; } 
-
-
 
     [field: SerializeField] public int SpawnRate { get; set; } = 2;
     [field: SerializeField] public int SpawnedSize { get; set; } = 1;
@@ -40,14 +40,14 @@ public class Base : Entity
     [field: SerializeField] public GameObject WestSlot { get; set; }
     [field: SerializeField] public GameObject NorthWestSlot { get; set; }
 
-    [field: SerializeField] public List<GameObject> Spawns { get; set; }
+    [field: SerializeField] public List<GameObject> Spawns { get; set; } //Refers to spawn locations for billions
 
 
     [field: SerializeField] public bool CanAttack { get; set; }
     [field: SerializeField] public bool CanSpawnBillion { get; set; } //Seperate Check from testing number spawned to max
     [field: SerializeField] public bool IsBillionSpawning { get; set; }
 
-
+    
     public void UnitDeath()
     {
         this.CurAmountSpawned -=1;
@@ -76,7 +76,10 @@ public class Base : Entity
         Spawns.Add(WestSlot);
         Spawns.Add(NorthWestSlot);
 
-
+        if(EntityTeam != null )
+        {
+            this.SpriteRender.color = EntityTeam.TeamColor;
+        }
 
     }
 
@@ -90,7 +93,12 @@ public class Base : Entity
         {
             StartCoroutine(CreateBillion(SpawnedSize,BillionType,SpawnRate));
         }
-
+        if(CurHealth <= 0)
+        {
+            CanAttack = false;
+            CanSpawnBillion = false;
+            Destroy(this.gameObject);
+        }
     }
 
     void TargetClosetEnemy()
@@ -105,8 +113,11 @@ public class Base : Entity
             float distance = (curEnt.transform.position - this.transform.position).sqrMagnitude;
             if(distance < DistanceToEnemy)
             {
+                if(curEnt.EntityTeam != this.EntityTeam)
+                {
                 DistanceToEnemy = distance;
                 TargetedEntity = curEnt.gameObject;
+                }
             }
         }
     }
@@ -130,5 +141,41 @@ public class Base : Entity
         yield return new WaitForSeconds(RespawnDelay);
         this.IsBillionSpawning = false;
     
+    }
+
+    public void CreateFlag(Vector2 MousePos)
+    {
+        if(Flags.Count < FlagLimit)
+        {
+            GameObject NewFlag = Instantiate(FlagType,new Vector3(MousePos.x, MousePos.y, 0), Quaternion.identity);
+            if (NewFlag.TryGetComponent<Flag>(out Flag FlagScript))
+            {
+                FlagScript.EntityTeam = this.EntityTeam;
+                FlagScript.MainBase = this;
+                FlagScript.IsActive = true;
+            }
+            this.Flags.Add(FlagScript);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //I'm pretty sure if i just lower the level of the script on the prefab this bug wouldnt be happening
+        if(collision.gameObject.GetComponentInParent<Bullet>())
+        {
+            Bullet BulletScript = collision.gameObject.GetComponentInParent<Bullet>();
+            Debug.Log("Hit by" + collision.gameObject.name + " damage" + BulletScript.Damage);
+            if(BulletScript.EntityTeam != this.EntityTeam)
+            {
+                this.CurHealth -= BulletScript.Damage;
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+
+        
     }
 }

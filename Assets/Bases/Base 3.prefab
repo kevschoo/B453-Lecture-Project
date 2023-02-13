@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -270,7 +270,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -371,7 +371,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -453,23 +453,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74994792e02fcb44e8fc8dd429160546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EntityTeam>k__BackingField: {fileID: 0}
+  <EntityTeam>k__BackingField: {fileID: 1998133728267847464}
   <TargetedLocation>k__BackingField: {fileID: 0}
   <TargetedEntity>k__BackingField: {fileID: 0}
   <MainBase>k__BackingField: {fileID: 3534862661566661181}
   <SpriteRender>k__BackingField: {fileID: 3534862661588294948}
+  <FlagLimit>k__BackingField: 2
   <Flags>k__BackingField: []
-  <BillionType>k__BackingField: {fileID: 6923089962662848406, guid: cf5514727caec2b4f925ce7fd70dd56c, type: 3}
+  <FlagType>k__BackingField: {fileID: 9195992908666019653, guid: c5ca0faabbba2724487fbffe3fe8032f, type: 3}
+  <BillionType>k__BackingField: {fileID: 6923089962662848406, guid: 540e6701dba46d4439b9b32b4fa677da, type: 3}
   <SpawnRate>k__BackingField: 2
   <SpawnedSize>k__BackingField: 1
   <MaxAmountSpawned>k__BackingField: 10
   <CurAmountSpawned>k__BackingField: 0
-  <Defense>k__BackingField: 0
-  <Level>k__BackingField: 0
-  <FireRate>k__BackingField: 0
-  <Damage>k__BackingField: 0
-  <MaxHealth>k__BackingField: 0
-  <CurHealth>k__BackingField: 0
+  <Defense>k__BackingField: 1
+  <Level>k__BackingField: 1
+  <FireRate>k__BackingField: 1
+  <Damage>k__BackingField: 1
+  <MaxHealth>k__BackingField: 25
+  <CurHealth>k__BackingField: 25
   <NorthSlot>k__BackingField: {fileID: 3534862661839328656}
   <NorthEastSlot>k__BackingField: {fileID: 3534862661921973741}
   <EastSlot>k__BackingField: {fileID: 3534862661674734679}
@@ -497,6 +499,7 @@ MonoBehaviour:
   <BaseObj>k__BackingField: {fileID: 3534862661566661181}
   <TeamID>k__BackingField: 0
   <Score>k__BackingField: 0
+  <TeamColor>k__BackingField: {r: 1, g: 0.8, b: 0, a: 1}
 --- !u!1 &3534862661588294955
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +573,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 9270ee602ad46724bacb54a7561c8ffc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -799,7 +802,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -900,7 +903,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -1001,7 +1004,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -1134,7 +1137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0
@@ -1235,7 +1238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c57a25e7592a32b4d8f7f98658e9a498, type: 3}
   m_Color: {r: 1, g: 0.8000001, b: 0, a: 0.39215687}
   m_FlipX: 0

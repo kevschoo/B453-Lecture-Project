@@ -82,18 +82,20 @@ MonoBehaviour:
   <TargetedLocation>k__BackingField: {fileID: 0}
   <TargetedEntity>k__BackingField: {fileID: 0}
   <MainBase>k__BackingField: {fileID: 0}
+  <RB>k__BackingField: {fileID: 0}
   <SpriteRender>k__BackingField: {fileID: 6923089963683476448}
   <Flags>k__BackingField: []
   <TargetFlag>k__BackingField: {fileID: 0}
   <GunCenter>k__BackingField: {fileID: 0}
   <GunLeft>k__BackingField: {fileID: 0}
   <GunRight>k__BackingField: {fileID: 0}
-  <MaxHealth>k__BackingField: 0
-  <CurHealth>k__BackingField: 0
-  <FireRate>k__BackingField: 0
-  <Damage>k__BackingField: 0
-  <Speed>k__BackingField: 0
-  <CanAttack>k__BackingField: 0
+  <MaxHealth>k__BackingField: 5
+  <CurHealth>k__BackingField: 5
+  <FireRate>k__BackingField: 1
+  <Damage>k__BackingField: 1
+  <Speed>k__BackingField: 1
+  <CanAttack>k__BackingField: 1
+  <CanMove>k__BackingField: 1
 --- !u!50 &6923089962662848403
 Rigidbody2D:
   serializedVersion: 4
