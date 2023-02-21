@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
          transform.position += transform.right * Time.deltaTime * this.Speed;
     }

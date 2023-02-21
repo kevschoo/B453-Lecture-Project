@@ -16,7 +16,7 @@ public class Base : Entity
     [field: SerializeField] public GameObject FlagType { get; set; } 
     [field: SerializeField] public GameObject BillionType { get; set; } 
 
-    [field: SerializeField] public int SpawnRate { get; set; } = 2;
+    [field: SerializeField] public float SpawnRate { get; set; } = 2;
     [field: SerializeField] public int SpawnedSize { get; set; } = 1;
     [field: SerializeField] public int MaxAmountSpawned { get; set; } = 10;
     [field: SerializeField] public int CurAmountSpawned { get; set; } = 0;

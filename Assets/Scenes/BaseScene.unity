@@ -406,9 +406,15 @@ MonoBehaviour:
   <MainBase>k__BackingField: {fileID: 1673399475}
   <Flags>k__BackingField: []
   <SelectedObj>k__BackingField: {fileID: 0}
+  <NearestFlag>k__BackingField: {fileID: 0}
   <LineRender>k__BackingField: {fileID: 1436147658}
   <UseAnyBase>k__BackingField: 1
   <UseAnyFlag>k__BackingField: 1
+  <FindFlagFromAnywhere>k__BackingField: 1
+  currentObjectType: 0
+  MousePos: {x: 0, y: 0}
+  RClickDown: 0
+  LClickDown: 0
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0

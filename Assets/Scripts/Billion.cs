@@ -29,8 +29,9 @@ public class Billion : Entity
     [field: SerializeField] public int Damage { get; set; }
     [field: SerializeField] public int BulletSpeed { get; set; }
     [field: SerializeField] public int Speed { get; set; }
-    [field: SerializeField] public int Range { get; set; } = 5;
-
+    [field: SerializeField] public int Range { get; set; } = 5; //Attack Range
+    [field: SerializeField] public float MaxSpeed { get; set; } = 3f;
+    [field: SerializeField] public float Acceleration { get; set; } = 1f;
     [field: SerializeField] public bool CanAttack { get; set; }
     [field: SerializeField] public bool IsShooting { get; set; }
     [field: SerializeField] public bool CanMove { get; set; }
@@ -61,18 +62,36 @@ public class Billion : Entity
         if(CanMove)
         {
             GetClosetFlag();
-            if(TargetFlag != null)
-            { 
-                Vector2 direction = (TargetFlag.transform.position - transform.position).normalized;
-                rb.velocity = direction * Speed;
-            }
         }
         if(CurHealth <= 0)
         {
             Destroy(this.gameObject);
         }
     }
+    
+    void FixedUpdate()
+    {
+        if(TargetFlag != null)
+        { 
+            Vector2 direction = (TargetFlag.transform.position - transform.position).normalized;
+            float distance = Vector2.Distance(transform.position, TargetFlag.transform.position);
 
+            if (distance > 0f)
+            {
+                float dirSpeed = Mathf.Min(MaxSpeed, Acceleration * distance);
+                rb.velocity = direction * dirSpeed;
+            }
+            else
+            {
+            rb.velocity = Vector2.zero;
+            }
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+        
+    }
     void TargetClosetEnemy()
     {
         float DistanceToEnemy = Mathf.Infinity;
