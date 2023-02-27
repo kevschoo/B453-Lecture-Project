@@ -225,9 +225,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
+      propertyPath: <SpawnRate>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: <EntityTeam>k__BackingField
       value: 
       objectReference: {fileID: 1178919424}
+    - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
+      propertyPath: <SpawnedSize>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
+      propertyPath: <MaxAmountSpawned>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661315, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: m_Name
       value: Base

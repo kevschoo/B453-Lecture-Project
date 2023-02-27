@@ -11,11 +11,13 @@ public class Billion : Entity
     [field: SerializeField]public override Base MainBase { get; set; }
     [field: SerializeField] public GameObject BulletPrefab { get; set; }
 
+
     [field: SerializeField] public Rigidbody2D rb { get; set; }
     [field: SerializeField] public SpriteRenderer SpriteRender { get; set; }
     [field: SerializeField] public List<Flag> Flags { get; set; } //List of Flags
     [field: SerializeField] public Flag TargetFlag { get; set; } //Flag Game Object
 
+    [field: SerializeField] public GameObject BillionBody { get; set; }
     [field: SerializeField] public GameObject GunCenter { get; set; }
     [field: SerializeField] public GameObject GunLeft { get; set; }
     [field: SerializeField] public GameObject GunRight { get; set; }
@@ -31,12 +33,12 @@ public class Billion : Entity
     [field: SerializeField] public int Speed { get; set; }
     [field: SerializeField] public int Range { get; set; } = 5; //Attack Range
     [field: SerializeField] public float MaxSpeed { get; set; } = 3f;
-    [field: SerializeField] public float Acceleration { get; set; } = 1f;
+    [field: SerializeField] public float Acceleration { get; set; } = .5f;
     [field: SerializeField] public bool CanAttack { get; set; }
     [field: SerializeField] public bool IsShooting { get; set; }
     [field: SerializeField] public bool CanMove { get; set; }
 
-
+    Vector3 LocalScaleModifer = new Vector3(1,1,1);
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,11 @@ public class Billion : Entity
     // Update is called once per frame
     void Update()
     {
+        float Size = ((CurHealth+MaxHealth)/(2f))/MaxHealth;
+        if(Size > 1) {Size = 1;}
+        LocalScaleModifer.x = Size; LocalScaleModifer.y = Size;
+        BillionBody.transform.localScale = LocalScaleModifer;
+
         if(CanAttack)
         {
             TargetClosetEnemy();
@@ -68,7 +75,7 @@ public class Billion : Entity
             Destroy(this.gameObject);
         }
     }
-    
+
     void FixedUpdate()
     {
         if(TargetFlag != null)

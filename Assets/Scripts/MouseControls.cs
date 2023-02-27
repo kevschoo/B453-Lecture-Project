@@ -66,6 +66,9 @@ public class MouseControls : MonoBehaviour
                         Debug.Log("Clicked Billion");
                         //SelectedObj = hit.collider.gameObject.GetComponentInParent<Billion>().gameObject;
                         currentObjectType = ObjectType.Billion;
+                        Billion BilScript = hit.collider.gameObject.GetComponentInParent<Billion>();
+                        BilScript.CurHealth -= 1;
+
                     }
                     else if(hit.collider.gameObject.GetComponentInParent<Base>())
                     {                        
