@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BillionFlag
   - Projectile
+  - Billion
   layers:
   - Default
   - TransparentFX
