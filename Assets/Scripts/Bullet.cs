@@ -26,4 +26,12 @@ public class Bullet : MonoBehaviour
     {
          transform.position += transform.right * Time.deltaTime * this.Speed;
     }
+
+/*
+    void OnCollisionEnter2D()
+    {
+        Debug.Log("Bullet Entered");
+    }
+*/
+
 }

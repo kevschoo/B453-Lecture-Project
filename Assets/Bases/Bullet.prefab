@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3951793699428725847}
   - component: {fileID: 9107123035406214629}
-  - component: {fileID: 6882099178353976125}
   m_Layer: 0
   m_Name: laserBlue04
   m_TagString: Untagged
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6882099178353976125
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548074373834997305}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.13000003, y: 0.3700001}
-  m_Direction: 0
 --- !u!1 &3512889446421969506
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,9 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3075784537458127844}
   - component: {fileID: 3059290305009817428}
+  - component: {fileID: 2390291737185875159}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,3 +136,19 @@ MonoBehaviour:
   <Damage>k__BackingField: 1
   <Speed>k__BackingField: 3
   <Life>k__BackingField: 4
+--- !u!70 &2390291737185875159
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512889446421969506}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.4, y: 0.15}
+  m_Direction: 1

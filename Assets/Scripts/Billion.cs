@@ -126,13 +126,11 @@ public class Billion : Entity
 
         Vector2 direction = TargetPos - MyPos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle + 270, Vector3.forward);
-        Quaternion Brotation = Quaternion.AngleAxis(angle , Vector3.forward);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
-        this.GunCenter.transform.rotation = rotation;
+        Quaternion rotation = Quaternion.AngleAxis(angle , Vector3.forward);
+        this.GunCenter.transform.rotation = Quaternion.AngleAxis(angle + 270, Vector3.forward);
         if(Vector2.Distance(TargetPos,MyPos) < Range && !IsShooting)
         {
-            StartCoroutine(CreateBullet(Brotation));
+            StartCoroutine(CreateBullet(rotation));
         }
 
     }
@@ -190,16 +188,20 @@ public class Billion : Entity
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if(collision.gameObject.GetComponent<Bullet>())
+        //Debug.Log("Hit by "+collision.gameObject.name);
+        if(collision.gameObject.CompareTag("Projectile"))
         {
-            Bullet BulletScript = collision.gameObject.GetComponent<Bullet>();
-            if(BulletScript.EntityTeam != this.EntityTeam)
+            //Debug.Log("Hit by Bullet");
+            if(collision.TryGetComponent<Bullet>(out Bullet BulletScript))
             {
-                this.CurHealth -= BulletScript.Damage;
-                Debug.Log("Hit by" + collision.gameObject.name + "  damage " + BulletScript.Damage);
-                Destroy(collision.gameObject);
+                BulletScript = collision.gameObject.GetComponent<Bullet>();
+                if(BulletScript.EntityTeam != this.EntityTeam)
+                {
+                    this.CurHealth -= BulletScript.Damage;
+                    Destroy(collision.gameObject);
+                }
             }
         }
+        
     }
 }
