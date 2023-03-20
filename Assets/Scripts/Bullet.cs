@@ -27,4 +27,19 @@ public class Bullet : MonoBehaviour
         transform.position += transform.right * Time.deltaTime * this.Speed;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Billion"))
+        {
+            //Debug.Log("Hit Bill");
+        }
+        else if(collision.gameObject.CompareTag("TilemapWall"))
+        {
+            //Debug.Log("Hit wall");
+            Destroy(this.gameObject);
+        }
+
+        
+    }
+
 }

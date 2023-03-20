@@ -159,11 +159,12 @@ public class Billion : Entity
             
         }
     }
+    
     void OnDestroy()
     {
         if(MainBase != null)
         {
-            MainBase.UnitDeath();
+            MainBase.UnitDeath(this.gameObject);
         }
     }
 

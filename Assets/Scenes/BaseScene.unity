@@ -160,7 +160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172525405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.99, z: -10}
+  m_LocalPosition: {x: 0, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 916155140}
   m_Layer: 0
   m_Name: Tilemap-WALL
-  m_TagString: Untagged
+  m_TagString: TilemapWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7392,7 +7392,7 @@ PrefabInstance:
       objectReference: {fileID: 756389581}
     - target: {fileID: 3534862661566661181, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: <MaxAmountSpawned>k__BackingField
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661315, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: m_Name
@@ -7402,7 +7402,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3534862662754631497, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
 --- !u!114 &1673399475 stripped
 MonoBehaviour:
@@ -7583,7 +7584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964658079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.99, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,6 +7,7 @@ TagManager:
   - BillionFlag
   - Projectile
   - Billion
+  - TilemapWall
   layers:
   - Default
   - TransparentFX

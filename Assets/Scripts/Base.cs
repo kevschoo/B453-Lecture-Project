@@ -16,6 +16,7 @@ public class Base : Entity
     [field: SerializeField] public GameObject FlagType { get; set; } 
     [field: SerializeField] public GameObject BillionType { get; set; } 
 
+    [field: SerializeField] public List<GameObject> SpawnedBillions { get; set; } //List of this objects billions
     [field: SerializeField] public float SpawnRate { get; set; } = 2;
     [field: SerializeField] public int SpawnedSize { get; set; } = 1;
     [field: SerializeField] public int MaxAmountSpawned { get; set; } = 10;
@@ -48,13 +49,15 @@ public class Base : Entity
     [field: SerializeField] public bool IsBillionSpawning { get; set; }
 
     
-    public void UnitDeath()
+    public void UnitDeath(GameObject Billion)
     {
-        this.CurAmountSpawned -=1;
+        this.SpawnedBillions.Remove(Billion);
+        this.CurAmountSpawned -= 1;
     }
-    public void UnitSpawn()
+    public void UnitSpawn(GameObject Billion)
     {
-        this.CurAmountSpawned +=1;
+        this.SpawnedBillions.Add(Billion);
+        this.CurAmountSpawned += 1;
     }
 
 
@@ -136,7 +139,7 @@ public class Base : Entity
                 BillionScript.EntityTeam = this.EntityTeam;
                 BillionScript.MainBase = this;
             }
-        this.CurAmountSpawned++;    
+        UnitSpawn(NewBillion); 
         }
         yield return new WaitForSeconds(RespawnDelay);
         this.IsBillionSpawning = false;
@@ -160,22 +163,27 @@ public class Base : Entity
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //I'm pretty sure if i just lower the level of the script on the prefab this bug wouldnt be happening
-        if(collision.gameObject.GetComponentInParent<Bullet>())
+        if(collision.gameObject.CompareTag("Projectile"))
         {
-            Bullet BulletScript = collision.gameObject.GetComponentInParent<Bullet>();
-            Debug.Log("Hit by" + collision.gameObject.name + " damage" + BulletScript.Damage);
-            if(BulletScript.EntityTeam != this.EntityTeam)
+            Debug.Log("Hit by Bullet");
+            if(collision.TryGetComponent<Bullet>(out Bullet BulletScript))
             {
-                this.CurHealth -= BulletScript.Damage;
-                Destroy(collision.gameObject);
+                BulletScript = collision.gameObject.GetComponent<Bullet>();
+                if(BulletScript.EntityTeam != this.EntityTeam)
+                {
+                    this.CurHealth -= BulletScript.Damage;
+                    Destroy(collision.gameObject);
+                }
             }
         }
     }
 
     void OnDestroy()
     {
-
+        foreach(GameObject Billion in SpawnedBillions)
+        {
+            Destroy(Billion.gameObject);
+        }
         
     }
 }

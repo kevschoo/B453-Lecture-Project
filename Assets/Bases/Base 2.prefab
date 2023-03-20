@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862660733870220}
   - component: {fileID: 3534862660733870222}
-  - component: {fileID: 3534862660733870221}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862660733870221
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862660733870227}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862660951252167
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862661537229332}
   - component: {fileID: 3534862661537229334}
-  - component: {fileID: 3534862661537229333}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -282,22 +264,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862661537229333
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862661537229339}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862661547409046
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +274,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862661547409047}
   - component: {fileID: 3534862661547409041}
-  - component: {fileID: 3534862661547409040}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -383,22 +348,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862661547409040
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862661547409046}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862661566661315
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +359,7 @@ GameObject:
   - component: {fileID: 3534862661566661180}
   - component: {fileID: 3534862661566661181}
   - component: {fileID: 1998133728267847464}
+  - component: {fileID: 7992513585788215247}
   m_Layer: 0
   m_Name: Base 2
   m_TagString: Untagged
@@ -462,6 +412,7 @@ MonoBehaviour:
   <Flags>k__BackingField: []
   <FlagType>k__BackingField: {fileID: 9195992908666019653, guid: b33ad48897a65dd4c8b433d4c3b76013, type: 3}
   <BillionType>k__BackingField: {fileID: 6923089962662848406, guid: 540e6701dba46d4439b9b32b4fa677da, type: 3}
+  <SpawnedBillions>k__BackingField: []
   <SpawnRate>k__BackingField: 2
   <SpawnedSize>k__BackingField: 1
   <MaxAmountSpawned>k__BackingField: 10
@@ -500,6 +451,27 @@ MonoBehaviour:
   <TeamID>k__BackingField: 0
   <Score>k__BackingField: 0
   <TeamColor>k__BackingField: {r: 0.7490196, g: 0.32156864, b: 0.21568628, a: 1}
+--- !u!50 &7992513585788215247
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534862661566661315}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &3534862661588294955
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +711,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862662048163809}
   - component: {fileID: 3534862662048163811}
-  - component: {fileID: 3534862662048163810}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -814,22 +785,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862662048163810
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862662048163808}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862662064134272
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +795,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862662064134273}
   - component: {fileID: 3534862662064134275}
-  - component: {fileID: 3534862662064134274}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -915,22 +869,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862662064134274
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862662064134272}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862662256117867
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +879,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862662256117860}
   - component: {fileID: 3534862662256117862}
-  - component: {fileID: 3534862662256117861}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -1016,22 +953,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862662256117861
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862662256117867}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862662279043119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +995,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862662671110632}
   - component: {fileID: 3534862662671110634}
-  - component: {fileID: 3534862662671110633}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -1149,22 +1069,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862662671110633
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862662671110639}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
 --- !u!1 &3534862662754631503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1079,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3534862662754631496}
   - component: {fileID: 3534862662754631498}
-  - component: {fileID: 3534862662754631497}
   m_Layer: 0
   m_Name: turretBase_big
   m_TagString: Untagged
@@ -1250,19 +1153,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3534862662754631497
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534862662754631503}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.205
