@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: <SpawnRate>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: <EntityTeam>k__BackingField
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 1178919424}
     - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: <SpawnedSize>k__BackingField
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
       propertyPath: <MaxAmountSpawned>k__BackingField
@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4680792857132239590, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
 --- !u!1001 &370771589
@@ -257,6 +261,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 888548978345431236, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1998133728267847464, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
       propertyPath: <TeamID>k__BackingField
       value: 2
@@ -304,6 +312,14 @@ PrefabInstance:
     - target: {fileID: 3534862661566661180, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
+      propertyPath: <SpawnRate>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
+      propertyPath: <SpawnedSize>k__BackingField
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
       propertyPath: <MaxAmountSpawned>k__BackingField
@@ -7387,12 +7403,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
+      propertyPath: <SpawnRate>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: <EntityTeam>k__BackingField
       value: 
       objectReference: {fileID: 756389581}
     - target: {fileID: 3534862661566661181, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
+      propertyPath: <SpawnedSize>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: <MaxAmountSpawned>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661315, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: m_Name
@@ -7401,6 +7425,10 @@ PrefabInstance:
     - target: {fileID: 3534862661566661315, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992513585788215247, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3534862662754631497, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
@@ -7529,6 +7557,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534862661566661181, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
+      propertyPath: <SpawnRate>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
+      propertyPath: <SpawnedSize>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534862661566661181, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
       propertyPath: <MaxAmountSpawned>k__BackingField
       value: 5
       objectReference: {fileID: 0}
@@ -7539,6 +7575,10 @@ PrefabInstance:
     - target: {fileID: 3534862661566661315, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402945644738239735, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}

@@ -25,13 +25,21 @@ public class Base : Entity
     [field: SerializeField] public int Defense { get; set; }
     [field: SerializeField] public int Level { get; set; }
 
-    [field: SerializeField] public int FireRate { get; set; }
+    [field: SerializeField] public float Range { get; set; } = 5; //Attack Range
+    [field: SerializeField] public float FireRate { get; set; }
     [field: SerializeField] public int Damage { get; set; }
+    [field: SerializeField] public bool IsShooting { get; set; }
+    [field: SerializeField] public float BulletSpeed { get; set; }
+    [field: SerializeField] public bool CanAttack { get; set; }
 
     [field: SerializeField] public int MaxHealth { get; set; }
     [field: SerializeField] public int CurHealth { get; set; }
 
+    [field: SerializeField] public GameObject MainTurret { get; set; }
+    [field: SerializeField] public Transform MTBulletSpawn { get; set; }
+    [field: SerializeField] public GameObject BulletPrefab { get; set; }
     //Bruh
+    //Planed locations for spawning and potential powerup slots
     [field: SerializeField] public GameObject NorthSlot { get; set; }
     [field: SerializeField] public GameObject NorthEastSlot { get; set; }
     [field: SerializeField] public GameObject EastSlot { get; set; }
@@ -43,12 +51,10 @@ public class Base : Entity
 
     [field: SerializeField] public List<GameObject> Spawns { get; set; } //Refers to spawn locations for billions
 
-
-    [field: SerializeField] public bool CanAttack { get; set; }
     [field: SerializeField] public bool CanSpawnBillion { get; set; } //Seperate Check from testing number spawned to max
     [field: SerializeField] public bool IsBillionSpawning { get; set; }
 
-    
+
     public void UnitDeath(GameObject Billion)
     {
         this.SpawnedBillions.Remove(Billion);
@@ -66,7 +72,7 @@ public class Base : Entity
     {
         MainBase = this;
 
-        CanAttack = false;
+        CanAttack = true;
         CanSpawnBillion = true;
         IsBillionSpawning = false;
 
@@ -90,7 +96,13 @@ public class Base : Entity
     void Update()
     {
         if(CanAttack)
-        {TargetClosetEnemy();};
+        {
+            TargetClosetEnemy();
+            if(TargetedEntity != null)
+            {
+                AttackEnemy();
+            }
+        };
         
         if(!IsBillionSpawning && CanSpawnBillion && (CurAmountSpawned < MaxAmountSpawned))
         {
@@ -123,6 +135,22 @@ public class Base : Entity
                 }
             }
         }
+    }
+
+    void AttackEnemy()
+    {
+        Vector3 TargetPos = TargetedEntity.gameObject.transform.position;
+        Vector3 MyPos = this.MainTurret.transform.position;
+
+        Vector2 direction = TargetPos - MyPos;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle , Vector3.forward);
+        this.MainTurret.transform.rotation = Quaternion.Slerp(MainTurret.transform.rotation, rotation, 5 * Time.deltaTime);
+        if(Vector2.Distance(TargetPos,MyPos) < Range && !IsShooting)
+        {
+            StartCoroutine(CreateBullet(rotation));
+        }
+
     }
 
     IEnumerator CreateBillion(int Amount, GameObject BillionUnit, float RespawnDelay)
@@ -184,6 +212,37 @@ public class Base : Entity
         {
             Destroy(Billion.gameObject);
         }
-        
+        foreach(Flag Flaggy in Flags)
+        {
+            Destroy(Flaggy.gameObject);
+        }
     }
+
+    IEnumerator CreateBullet(Quaternion Rotation)
+    {
+        this.IsShooting = true;
+        GameObject NewBullet = Instantiate(BulletPrefab,new Vector3(MTBulletSpawn.position.x, MTBulletSpawn.position.y, MTBulletSpawn.position.z), Rotation);
+        if (NewBullet.TryGetComponent<Bullet>(out Bullet BulletScript))
+        {
+            {
+                BulletScript.EntityTeam = this.EntityTeam;
+                BulletScript.Parent = this.gameObject;
+                BulletScript.Damage = this.Damage;
+                BulletScript.Speed = this.BulletSpeed;
+            }
+        }
+
+        yield return new WaitForSeconds(this.FireRate);
+        this.IsShooting = false;
+    
+    }
+
+
+
+
+
+
+
+
+
 }

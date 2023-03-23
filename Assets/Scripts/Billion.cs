@@ -27,11 +27,11 @@ public class Billion : Entity
 
     [field: SerializeField] public int MaxHealth { get; set; }
     [field: SerializeField] public int CurHealth { get; set; }
-    [field: SerializeField] public int FireRate { get; set; }
+    [field: SerializeField] public float FireRate { get; set; }
     [field: SerializeField] public int Damage { get; set; }
-    [field: SerializeField] public int BulletSpeed { get; set; }
-    [field: SerializeField] public int Speed { get; set; }
-    [field: SerializeField] public int Range { get; set; } = 5; //Attack Range
+    [field: SerializeField] public float BulletSpeed { get; set; }
+    [field: SerializeField] public float Speed { get; set; }
+    [field: SerializeField] public float Range { get; set; } = 5; //Attack Range
     [field: SerializeField] public float MaxSpeed { get; set; } = 3f;
     [field: SerializeField] public float Acceleration { get; set; } = .5f;
     [field: SerializeField] public bool CanAttack { get; set; }
