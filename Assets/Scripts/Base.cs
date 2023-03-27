@@ -25,6 +25,7 @@ public class Base : Entity
     [field: SerializeField] public int Defense { get; set; }
     [field: SerializeField] public int Level { get; set; }
 
+    [field: SerializeField] public float RotationSpeed { get; set; } = 2; //Attack Range
     [field: SerializeField] public float Range { get; set; } = 5; //Attack Range
     [field: SerializeField] public float FireRate { get; set; }
     [field: SerializeField] public int Damage { get; set; }
@@ -145,7 +146,7 @@ public class Base : Entity
         Vector2 direction = TargetPos - MyPos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle , Vector3.forward);
-        this.MainTurret.transform.rotation = Quaternion.Slerp(MainTurret.transform.rotation, rotation, 5 * Time.deltaTime);
+        this.MainTurret.transform.rotation = Quaternion.Slerp(MainTurret.transform.rotation, rotation, RotationSpeed * Time.deltaTime);
         if(Vector2.Distance(TargetPos,MyPos) < Range && !IsShooting)
         {
             StartCoroutine(CreateBullet(rotation));

@@ -483,6 +483,7 @@ MonoBehaviour:
   <CurAmountSpawned>k__BackingField: 0
   <Defense>k__BackingField: 1
   <Level>k__BackingField: 1
+  <RotationSpeed>k__BackingField: 2
   <Range>k__BackingField: 6
   <FireRate>k__BackingField: 1.25
   <Damage>k__BackingField: 5
@@ -492,8 +493,8 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 25
   <CurHealth>k__BackingField: 25
   <MainTurret>k__BackingField: {fileID: 268824915118686617}
-  <MTBulletSpawn>k__BackingField: {fileID: 3075784537458127844, guid: 37baa05e05039d74f84e8f7b9ebcbc0b, type: 3}
-  <BulletPrefab>k__BackingField: {fileID: 48466074879588118}
+  <MTBulletSpawn>k__BackingField: {fileID: 3612958175048600637}
+  <BulletPrefab>k__BackingField: {fileID: 3512889446421969506, guid: 37baa05e05039d74f84e8f7b9ebcbc0b, type: 3}
   <NorthSlot>k__BackingField: {fileID: 3534862661839328656}
   <NorthEastSlot>k__BackingField: {fileID: 3534862661921973741}
   <EastSlot>k__BackingField: {fileID: 3534862661674734679}
