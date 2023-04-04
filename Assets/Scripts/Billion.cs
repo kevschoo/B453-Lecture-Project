@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -16,7 +17,8 @@ public class Billion : Entity
     [field: SerializeField] public SpriteRenderer SpriteRender { get; set; }
     [field: SerializeField] public List<Flag> Flags { get; set; } //List of Flags
     [field: SerializeField] public Flag TargetFlag { get; set; } //Flag Game Object
-
+    
+    [SerializeField] private TMP_Text LevelText;
     [field: SerializeField] public GameObject BillionBody { get; set; }
     [field: SerializeField] public GameObject GunCenter { get; set; }
     [field: SerializeField] public GameObject GunLeft { get; set; }
@@ -25,12 +27,14 @@ public class Billion : Entity
     [field: SerializeField] public Transform GunLeftFirePoint { get; set; }
     [field: SerializeField] public Transform GunRightFirePoint { get; set; }
 
-    [field: SerializeField] public int MaxHealth { get; set; }
-    [field: SerializeField] public int CurHealth { get; set; }
-    [field: SerializeField] public float FireRate { get; set; }
-    [field: SerializeField] public int Damage { get; set; }
-    [field: SerializeField] public float BulletSpeed { get; set; }
-    [field: SerializeField] public float Speed { get; set; }
+    [field: SerializeField] public int Level { get; set; } = 0;
+    [field: SerializeField] public int MaxHealth { get; set; } = 5;
+    [field: SerializeField] public int CurHealth { get; set; } = 5;
+    [field: SerializeField] public int ExpValue { get; set; } = 60;
+    [field: SerializeField] public float FireRate { get; set; } = 1;
+    [field: SerializeField] public int Damage { get; set; } = 1;
+    [field: SerializeField] public float BulletSpeed { get; set; } = 5;
+    [field: SerializeField] public float Speed { get; set; } = 1;
     [field: SerializeField] public float Range { get; set; } = 5; //Attack Range
     [field: SerializeField] public float MaxSpeed { get; set; } = 3f;
     [field: SerializeField] public float Acceleration { get; set; } = .5f;
@@ -48,6 +52,13 @@ public class Billion : Entity
             this.SpriteRender.color = EntityTeam.TeamColor;
         }
         rb = this.GetComponent<Rigidbody2D>();
+        this.LevelText.text = "" + Level;
+        this.Damage = Damage + Mathf.FloorToInt(Level/2);
+        this.BulletSpeed = BulletSpeed + (Level/2);
+        this.CurHealth = CurHealth + (Level*2);
+        this.MaxHealth = MaxHealth + (Level*2);
+        this.Speed = Speed + (Level/8);
+        this.ExpValue = ExpValue + (Level * 20);
     }
 
     // Update is called once per frame
@@ -199,6 +210,15 @@ public class Billion : Entity
                 if(BulletScript.EntityTeam != this.EntityTeam)
                 {
                     this.CurHealth -= BulletScript.Damage;
+                    //If our health is negative it probably meant that this projectile killed us
+                    if(CurHealth <= 0)
+                    {
+                        if(BulletScript.EntityTeam.BaseObj != null)
+                        {
+                            BulletScript.EntityTeam.BaseObj.ChangeExperience(this.ExpValue);
+                        }
+                    }
+
                     Destroy(collision.gameObject);
                 }
             }
