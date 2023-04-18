@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BaseObj>k__BackingField: {fileID: 3534862661566661181}
-  <TeamID>k__BackingField: 0
+  <TeamID>k__BackingField: 3
   <Score>k__BackingField: 0
   <TeamColor>k__BackingField: {r: 1, g: 0.8, b: 0, a: 1}
 --- !u!50 &6402945644738239735
@@ -574,7 +574,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!1 &3534862661588294955
 GameObject:
   m_ObjectHideFlags: 0

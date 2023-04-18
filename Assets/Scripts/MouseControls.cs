@@ -75,7 +75,10 @@ public class MouseControls : MonoBehaviour
                         Debug.Log("Clicked Base");
                         SelectedObj = hit.collider.gameObject.GetComponentInParent<Base>().gameObject;
                         Base BaseScript = SelectedObj.GetComponentInParent<Base>();
-                        
+                        if(this.EntityTeam == null)
+                        {
+                            this.EntityTeam = BaseScript.EntityTeam;
+                        }
                         if(BaseScript.EntityTeam.TeamID == this.EntityTeam.TeamID || this.UseAnyBase == true)
                         {
                             this.EntityTeam = BaseScript.EntityTeam;
