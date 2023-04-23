@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1924452794104306130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1924452794104306128}
+  - component: {fileID: 1924452794104306131}
+  m_Layer: 0
+  m_Name: ObjectSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1924452794104306128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924452794104306130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.088697, y: 23.367426, z: -0.3909891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924452794104306131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924452794104306130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64aa444ecef5834468ac7ec9e9f80a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapGenerator: {fileID: 0}
+  floorTilemap: {fileID: 0}
+  largeObjects:
+  - {fileID: 3534862661566661315, guid: cfac24b6a32c13e4ebe7bfac7e2f26c7, type: 3}
+  - {fileID: 3534862661566661315, guid: e872d716e6f0788418d6004cf1eb9600, type: 3}
+  - {fileID: 3534862661566661315, guid: 46ae9280a1a661049bb680fcdc90b970, type: 3}
+  - {fileID: 3534862661566661315, guid: 571fae2d30c2c654c98e56aadbc52684, type: 3}
+  mediumObjects:
+  - {fileID: 2816535018395514188, guid: b0ab44c75b3875b4a808e0d645c47ed2, type: 3}
+  - {fileID: 2816535018395514188, guid: b0ab44c75b3875b4a808e0d645c47ed2, type: 3}
+  - {fileID: 2816535018395514188, guid: b0ab44c75b3875b4a808e0d645c47ed2, type: 3}
+  - {fileID: 2816535018395514188, guid: b0ab44c75b3875b4a808e0d645c47ed2, type: 3}
+  smallObjects:
+  - {fileID: 6336114209712129073, guid: 6fa6f79be78b55c43aa2e317e7b901ad, type: 3}
+  - {fileID: 6336114209712129073, guid: 6fa6f79be78b55c43aa2e317e7b901ad, type: 3}
+  - {fileID: 6336114209712129073, guid: 6fa6f79be78b55c43aa2e317e7b901ad, type: 3}
+  - {fileID: 6336114209712129073, guid: 6fa6f79be78b55c43aa2e317e7b901ad, type: 3}
+  randomSmallObjects:
+  - {fileID: 5325069735878501275, guid: f60d5efd05104384482cfb3c59db1361, type: 3}
+  - {fileID: 5325069735878501275, guid: f60d5efd05104384482cfb3c59db1361, type: 3}
+  - {fileID: 5325069735878501275, guid: f60d5efd05104384482cfb3c59db1361, type: 3}
+  - {fileID: 5325069735878501275, guid: f60d5efd05104384482cfb3c59db1361, type: 3}
+  randomSpawnCount: 4
