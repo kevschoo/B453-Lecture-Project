@@ -6037,6 +6037,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9503c6ab6f475e0489932928241c7971, type: 2}
     - target: {fileID: 6189934212906035047, guid: 9603937ae35d12a46ad1dec6c1c393e0, type: 3}
+      propertyPath: entranceMin
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189934212906035047, guid: 9603937ae35d12a46ad1dec6c1c393e0, type: 3}
       propertyPath: wallTilemap
       value: 
       objectReference: {fileID: 3851309279010762338}
